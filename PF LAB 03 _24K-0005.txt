@@ -1,0 +1,89 @@
+//QUESTION 1:
+The wrong value is being displayed because the variable x in an int,which has  a limit to the value it stores.
+3000000000 exceeds the maximum limit of 32 bit integer data type resulting in overflow and incorrect answer. 
+
+
+// QUESTION 2: Swap two number 
+
+#include <stdio.h>
+int main()
+{
+    int a,b,temp; //a takes the first number, b takes second number , temp stores the value of a before swapping
+    printf("Enter Number 1");
+    scanf("%d",&a);
+    printf("Enter Number 2");
+    scanf("%d",&b);
+    temp = a;
+    a = b;
+    b = temp;
+    printf("NUM1=%d NUM2=%d",a,b);
+    return 0;
+}//end main
+
+// QUESTION 3: Calculate tax and net salary
+
+#include <stdio.h>
+ int main()
+{
+    int taxRate,salary,net;
+    float tax;
+    printf("Enter your salary: ");  
+    scanf("%d",&salary);
+    printf("Enter your tax rate: ");
+    scanf("%d",&taxRate);
+    tax = (taxRate * salary)/100;
+    net = salary - tax;
+    printf("\nYour tax is %f",tax);
+    printf("\nYour net salary is %d",net);
+    return 0;
+} //end main
+
+//QUESTION 4: Calculate total cost and fuel used
+
+#include <stdio.h>
+int main()
+{
+    int dis = 1207, f1 = 118,f2 = 123;
+    float avg,fuel,cost;
+    printf("Enter your car fuel average = ");
+    scanf("%f",&avg);
+    if (avg > 0)
+	{
+	 fuel = dis/avg ;
+	 cost = (fuel * f1) + (fuel *f2);
+	 fuel = fuel * 2;
+	 printf("\nTotal cost is %f", cost);
+	 printf("\nFuel consumed is %f", fuel);
+	} 
+    else
+	 printf("Invalid car average");
+    return 0;	 
+}//end main
+
+//QUESTION 5: Calculate Simple Interest
+#include <stdio.h>
+int main()
+{
+    int amount,year;
+    float rate,interest;
+    printf("Enter the amount between 100 to 1000000 rs= ");
+    scanf("%d",&amount);
+    printf("Enter the rate of interest between 5 to 10 = ");
+    scanf("%f",&rate);
+    printf("Enter the time between 1 to 10 years = ");
+    scanf("%d",&year);
+    interest = (amount * rate * year)/100;
+    printf("Your simple interest is = %2f",interest);
+    return 0;	
+}//end main
+
+
+//QUESTION 6: Calculate Gradient
+#include <stdio.h>
+int main()
+{
+    int x1 = 5,x2 = 3,y1 = 4,y2 = 2;
+    float slope;
+    slope = (y2-y1)/(x2-x1);
+    printf("The slope is: %.3f",slope);
+}//end main
