@@ -38,6 +38,7 @@ Question # 4:
  }//end main
 
 Question # 5:
+
 #include<stdio.h>
 int main()
 {
@@ -233,6 +234,8 @@ int main(){
  printf("\nNet Amount Paid by the Customer: %.2f",net);
  } 
 }//end main
+
+Question # 8:
 
 #include <stdio.h>
 int main(){
