@@ -1,0 +1,283 @@
+Question # 4:
+
+#include <stdio.h>
+ int main(){
+  int choice;
+  float radius,length,width,height,base,area;
+  printf("Enter 1 to calculate area of circle, 2 to calculate area of rectangle, 3 to calculate area of triangle, 4 to exit: ");
+  scanf("%d",&choice);
+  switch(choice){
+  case 1:
+    printf("Enter the radius of circle= ");
+    scanf("%f", &radius);
+    area = 3.142 * radius *radius;
+    printf("The area of circle is %f", area);
+    break;
+
+  case 2:
+    printf("Enter the length of rectangle=");
+    scanf("%f",&length);
+    printf("Enter the width of rectangle= ");
+    scanf("%f",&width);
+    area = length*width;
+    printf("The area of rectangle is %f", area);
+    break;
+
+  case 3:
+    printf("Enter the base of triangle=");
+    scanf("%f",&base);
+    printf("Enter the height of triangle= ");
+    scanf("%f",&height);
+    area = (base*height)/2;
+    printf("The area of triangle is %f", area);
+    break;
+  default:
+    printf("thankyou!");
+}//end switch 
+  return 0;
+ }//end main
+
+Question # 5:
+#include<stdio.h>
+int main()
+{
+  float temp,ans;
+  char int_unit,fin_unit;
+  printf("Enter the current temperature unit, C for Celsius, K for Kelvin,F for Fahrenheit: ");
+  scanf(" %c",&int_unit);
+  printf("Enter the temperature: ");
+  scanf("%f",&temp);
+  printf("Enter the final temperature unit , C for Celsius, K for Kelvin,F for Fahrenheit: ");
+  scanf(" %c",&fin_unit);
+  if ((int_unit == 'C') && (fin_unit == 'F'))
+  {
+    ans = (temp * 9/5) + 32;
+    printf("\nThe temperature in Fahrenheit is: %f", ans);
+    printf("\nThank you for using our AI-powered temperature converter");
+  }
+  else if ((int_unit == 'C') && (fin_unit == 'K'))
+  {
+    ans = temp + 273.15;
+    printf("\nThe temperature in Kelvin is: %f", ans);
+    printf("\nThank you for using our AI-powered temperature converter");
+  }
+  else if ((int_unit == 'F') && (fin_unit == 'C'))
+  {
+    ans = (temp - 32)*5/9;
+    printf("\nThe temperature in Celsius is: %f",ans);
+    printf("\nThank you for using our AI-powered temperature converter");
+  }
+  else if ((int_unit == 'F') && (fin_unit == 'K'))
+  {
+    ans = (temp - 32)*5/9 + 273.15;
+    printf("\nThe temperature in Kelvin is: %f",ans);
+    printf("\nThank you for using our AI-powered temperature converter");
+  }
+  else if ((int_unit == 'K') && (fin_unit == 'C'))
+  {
+    ans = temp - 273.15 ;
+    printf("\nThe temperature in Celsius is: %f",ans);
+    printf("\nThank you for using our AI-powered temperature converter");
+  }
+  else if ((int_unit == 'K') && (fin_unit == 'F'))
+  {
+    ans = (temp - 273.15)*9/5 + 32;
+    printf("\nThe temperature in Celsius is: %f",ans);
+    printf("\nThank you for using our AI-powered temperature converter");
+  }
+  else
+  {
+    printf("Invalid input");
+  }
+    return 0;
+}//end main
+
+Question # 6:
+
+#include<stdio.h>
+ int main()
+{
+    float int_amount, dis_amount,discount;
+    printf("Enter your total amount of shopping: ");
+    scanf("%f",&int_amount);
+    if ((int_amount >= 500)&&(int_amount <2000))
+    {
+      discount = int_amount * 0.05;
+      dis_amount = int_amount - discount;
+      printf("\nYour actual amount was: %f", int_amount);
+      printf("\nYou saved: %f",discount);
+      printf("\nYour discounted amount is: %f",dis_amount);
+    }
+    else if ((int_amount >= 2000)&&(int_amount <4000))
+    {
+    discount = int_amount * 0.10;
+    dis_amount = int_amount - discount;
+    printf("\nYour actual amount was: %f", int_amount);
+    printf("\nYou saved: %f",discount);
+    printf("\nYour discounted amount is: %f",dis_amount);
+    }
+    else if ((int_amount >= 4000)&&(int_amount <= 6000))
+    {
+    discount = int_amount * 0.20;
+    dis_amount = int_amount - discount;
+    printf("\nYour actual amount was: %f", int_amount);
+    printf("\nYou saved: %f",discount);
+    printf("\nYour discounted amount is: %f",dis_amount);
+    }
+    else if (int_amount > 6000)
+    {
+    discount = int_amount * 0.35;
+    dis_amount = int_amount - discount;
+    printf("\nYour actual amount was: %f", int_amount);
+    printf("\nYou saved: %f",discount);
+    printf("\nYour discounted amount is: %f",dis_amount);
+    }
+    else
+    {
+    printf("No discount applies");
+    }
+    return 0;
+}//end main
+
+Question # 7:
+
+#include<stdio.h>
+int main(){
+ int units,id;
+ float amount, extra,net,unit_charge ;
+ char name[20];
+ printf("Enter your costumer id: ");
+ scanf("%d",&id);
+ printf("Enter your name: ");
+ scanf ("%s",name);
+ printf("Enter the units consumed: ");
+ scanf("%d",&units);
+ if(units <=199)
+ {
+  amount = units * 16.20;
+  if (amount > 18000)
+  {
+   extra = amount * 0.15;
+   net = amount + extra;
+  }
+  else
+  {
+   extra = 0;
+   net = amount ;
+  }
+ printf("\nCustomer ID: %d",id);
+ printf("\nCustomer Name: %s",name);
+ printf("\nUnits Consumed: %d",units);
+ printf("\nAmount Charges @Rs. 16.20 per unit: %.0f",amount);
+ printf("\nSurcharge Amount: %.0f",extra);
+ printf("\nNet Amount Paid by the Customer: %.2f",net);
+ }
+ else if((units >=200)&&(units < 300))
+ {
+  amount = units * 20.10;
+  if (amount > 18000)
+  {
+   extra = amount * 0.15;
+   net = amount + extra;
+  }
+  else
+  {
+   extra = 0;
+    net = amount ;
+  }
+ printf("\nCustomer ID: %d",id);
+ printf("\nCustomer Name: %s",name);
+ printf("\nUnits Consumed: %d",units); 
+ printf("\nAmount Charges @Rs. 20.10 per unit: %.0f",amount);
+ printf("\nSurcharge Amount: %.0f",extra);
+ printf("\nNet Amount Paid by the Customer: %.2f",net);
+ }
+  else if((units >=300)&&(units < 500))
+ {
+ amount = units * 27.10;
+  if (amount > 18000)
+ {
+   extra = amount * 0.15;
+   net = amount + extra;
+ }
+  else
+  {
+   extra = 0;
+   net = amount ;
+  }
+ printf("\nCustomer ID: %d",id);
+ printf("\nCustomer Name: %s",name);
+ printf("\nUnits Consumed: %d",units); 
+ printf("\nAmount Charges @Rs. 27.10 per unit: %.0f",amount);
+ printf("\nSurcharge Amount: %.0f",extra);
+ printf("\nNet Amount Paid by the Customer: %.2f",net);
+ }
+ else if(units >=500)
+ {
+  amount = units * 35.90;
+  if (amount > 18000)
+ {
+   extra = amount * 0.15;
+   net = amount + extra;
+ }
+  else
+  {
+   extra = 0;
+   net = amount ;
+  }
+ printf("\nCustomer ID: %d",id);
+ printf("\nCustomer Name: %s",name);
+ printf("\nUnits Consumed: %d",units); 
+ printf("\nAmount Charges @Rs. 35.90 per unit: %.0f",amount);
+ printf("\nSurcharge Amount: %.0f",extra);
+ printf("\nNet Amount Paid by the Customer: %.2f",net);
+ } 
+}//end main
+
+#include <stdio.h>
+int main(){
+int num;
+printf("Enter a number: ");
+scanf("%d", &num);
+if (num > 0)
+{
+switch(num)
+{
+case 1:
+printf("one");
+break;
+case 2:
+printf("two");
+break;
+case 3:
+printf("three");
+break;
+case 4:
+printf("four");
+break;
+case 5:
+printf("five");
+break;
+case 6:
+printf("six");
+break;
+case 7:
+printf("seven");
+break;
+case 8:
+printf("eight");
+break;
+case 9:
+printf("nine");
+break;
+default:
+printf("greater than 9");
+}//end switch
+}//end if 
+else
+{
+printf("Invalid!Enter number between 1 to 9");
+}
+
+}//end main
+
