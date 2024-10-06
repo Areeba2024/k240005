@@ -1,0 +1,355 @@
+/* --Section 1 Q1--
+
+#include<stdio.h>
+
+int main()
+{
+int age;
+
+    printf("Enter your age: ");
+    scanf("%d",&age);
+    if (age > 0)
+    {
+    if ((age >= 13) && (age <=19)){
+    printf("You are a teenager");
+    }
+    else if ((age >=20) && (age < 60))
+    {
+    printf("You are an adult ");
+    }
+    else if(age >= 60)
+    {
+    printf("You are a senior");
+    }
+    else
+    {
+    printf("You are a child");
+    }
+    }
+    else
+    {
+    printf("Invalid age entered, Try again!");
+    }
+    return 0;
+}
+*/
+
+/* --- Section 1 Q2
+#include <stdio.h>
+int main() {
+  int num;
+  printf("Enter the number");
+  scanf("%d",&num);
+  if (num > 0)
+  {
+   printf("Its a positive number\n");
+   if (num % 2 == 0)
+   {
+    printf("Its an even number");
+   }
+   else
+   {
+    printf("Its an odd number");
+   }
+   }
+   else if (num < 0)
+   {
+    printf("Its a negative number\n");
+    if (num % 2 == 0) {
+    printf("Its an even number");
+   } else
+   {
+    printf("Its an odd number");
+   }
+   }
+   else
+   printf("Zero");
+return 0;
+}
+*/
+
+/* -- Section 2 Q1  
+#include<stdio.h>
+int main()
+{
+  int num;
+printf("Enter the number to check divisibilty by 3 and 5: ");
+scanf ("%d",&num);
+if ((num % 3 == 0) && (num % 5 == 0))
+{
+   printf ("its divisible by 3 and 5");
+}
+else
+{
+   printf ("its not divisible by 3 and 5");
+}
+return 0;
+}
+
+*/
+ 
+ 
+/* --Section 2 Q2 --
+#include<stdio.h>
+int main()
+{
+  int age;
+  int choice;
+  printf("Enter your age: ");
+  scanf("%d", &age);
+  printf("Do you have citizenship of the country you are living in? ");
+  scanf("%d",&choice);
+  if ((age >=18) && (choice == 1))
+  {
+    printf("You are eligible to vote");
+  }
+  else
+  {
+    printf("You are not eligible to vote");
+  }
+  return 0 ;
+}
+*/
+
+
+/* Section 3 Q1 ---
+#include<stdio.h>
+int main()
+{
+  int num1,num2;
+  printf("Enter first number: ");
+  scanf ("%d",&num1);
+  printf ("Enter second number: ");
+  scanf("%d", &num2);
+ 
+  num1>num2? printf("Max number is %d",num1): printf("Max number is %d",num2);
+  return 0;
+}
+*/
+ 
+/* Section 3 Q2---
+#include<stdio.h>
+int main()
+{
+   int num;
+   printf ("Enter the number: ");
+   scanf("%d",&num);
+   num > 0? printf("positive"):num != 0? printf ("negative")  : printf ("zero");
+   return 0;
+}
+*/
+  
+/* Section 4 Q1---- 
+#include<stdio.h>
+int main()
+{
+  int num1,num2;
+  printf("Enter first number: ");
+  scanf ("%d",&num1);
+  printf ("Enter second number: ");
+  scanf("%d", &num2);
+ 
+  num1 = num1 ^ num2;
+  num2 = num1 ^ num2;
+  num1 = num1 ^ num2;
+  printf("swapped first num %d \n",num1);
+  printf ("swapped second num %d", num2);
+return 0;
+}
+*/
+
+/* Section 4 Q2 ---
+#include <stdio.h>
+int main() {
+    int num, count;
+    count = 0;
+    printf("Enter a number: \n");
+    scanf("%d", &num);
+
+    while (num > 0) {
+        if (num & 1) {
+            count = count + 1;
+        }
+        num = num >> 1;  
+    }
+
+    printf("Number of 1s in the binary representation are: %d \n", count);
+    return 0;
+}
+
+*/
+
+
+
+/* Section 5 Q1---
+
+#include<stdio.h>
+int main()
+{
+  int year;
+  printf ("Enter the year: ");
+  scanf("%d",&year);
+  year % 400 == 0? printf("%d is a leap year",year) : year % 4== 0 && year % 100 != 0? printf("%d is a leap year",year):printf("%d is not a leap year",year);
+  return 0;
+}
+*/
+ 
+
+/* Section 5 Q2---
+#include<stdio.h>
+int main(){
+	int num, last , sum;
+	sum = 0;
+	printf("Enter the number to calculate its digit sum: ");
+	scanf("%d",&num);
+	while (num > 9)
+	{
+		last = num % 10;
+		num = num /10;
+		sum = sum + last;
+	}
+	sum = sum + num;
+	printf("sum is %d",sum);
+}
+*/
+
+
+/* More problems Q1 ---
+
+#include<stdio.h>
+int main ()
+{
+	int num1,num2,num3;
+	printf("Enter the number 1: ");
+	scanf("%d",&num1);
+	printf("Enter the number 2: ");
+	scanf("%d",&num2);
+	printf("Enter the number 3: ");
+	scanf("%d",&num3);
+	if (num1 >num2){
+		if (num1 > num3)
+		{
+			printf("Greatest is: %d", num1);
+		}
+		else 
+		{
+			printf("Greatest is: %d", num3);
+		}
+	} 
+	else 
+	{
+			if (num2 > num3)
+		{
+			printf("Greatest is: %d", num2);
+		}
+		else 
+		{
+			printf("Greatest is: %d", num3);
+		}
+	}
+	return 0;
+}
+*/
+
+/* More problems Q2 ---
+#include <stdio.h>
+int main() {
+    float attendance, ass_marks, test_marks;
+    float Grade;
+
+	printf("Enter attendance percent between 0-100: ");
+    scanf("%f", &attendance);
+	printf("Enter assignment marks between 0-100: ");
+    scanf("%f", &ass_marks);
+    printf("Enter exam marks between 0-100: ");
+    scanf("%f", &test_marks);
+    if (attendance < 75) {
+        Grade = 0; 
+        printf("Final Grade: %.2f (Attendance below 75%)\n", Grade);
+    } else {
+        Grade = (attendance * 0.2) + (ass_marks * 0.3) + (test_marks * 0.5);
+        
+        if (Grade >= 90) {
+            printf("Final Grade: %.2f (A+)\n", Grade);
+        } else if (Grade >= 80) {
+            printf("Final Grade: %.2f (A)\n", Grade);
+        } else if (Grade >= 70) {
+            printf("Final Grade: %.2f (B)\n", Grade);
+        } else if (Grade >= 60) {
+            printf("Final Grade: %.2f (C)\n", Grade);
+        } else if (Grade >= 50){
+            printf("Final Grade: %.2f (D)\n", Grade);
+        } else {
+        	printf("Final Grade: %.2f (F)\n", Grade);
+		}
+    }
+
+    return 0;
+}
+*/
+
+/* More problems Q3
+#include <stdio.h>
+//Encrypt function 
+char encrypt(char character, char key) {
+    return character ^ key; 
+}
+//declaration of decrypt funtion 
+char decrypt(char character, char key) {
+    return character ^ key;
+}
+
+int main() {
+    char character, key, encrypted, decrypted;
+    printf("Enter a character to encrypt: ");
+    scanf(" %c", &character); 
+    printf("Enter a key (single character): ");
+    scanf(" %c", &key); 
+    encrypted = encrypt(character, key);
+    printf("Encrypted character: %c\n", encrypted);
+    decrypted = decrypt(encrypted, key);
+    printf("Decrypted character: %c\n", decrypted);
+
+    return 0;
+}
+
+*/
+
+/* More problems Q4
+
+#include <stdio.h>
+int main() {
+    int age,credit_score;
+    float income;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+	printf("Enter your income: ");
+    scanf("%f", &income);
+    printf("Enter your credit score: ");
+    scanf("%d", &credit_score);
+    if ((age >= 18) && (income >= 30000) && (credit_score >= 500)) 
+	{
+        printf("You are eligible for the loan.\n");
+    } 
+	else 
+	{
+        printf("You are not eligible for the loan.\n");
+        if (age < 18)
+		{
+            printf("Reason: Age must be at least 18.\n");
+        }
+        if (income < 30000) 
+		{
+            printf("Reason: Income must be at least $30,000.\n");
+        }
+        if (credit_score < 500)
+		{
+            printf("Reason: Credit score must be at least 500.\n");
+        }
+    }
+
+    return 0;
+}
+
+*/
+
