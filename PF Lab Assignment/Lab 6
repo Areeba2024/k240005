@@ -1,0 +1,262 @@
+
+-------------Q1------------------
+
+#include<stdio.h>
+int main()
+{
+	int sum,num;	
+	do
+	{
+		printf("Enter a number: ");
+		scanf("%d",&num);
+		sum = sum + num;
+		printf("Sum is = %d \n",sum);
+	}
+	while(num !=0);
+       return 0;
+}
+
+-----------Q2----------------------
+
+#include<stdio.h>
+int main()
+{
+    int first,last,sum,i;
+    printf("Enter the starting number: ");
+    scanf("%d",&first);
+    printf("Enter the ending number: ");
+    scanf("%d",&last);
+    for(i = first;i <= last;i++)
+    {
+        if (i % 2 == 0)
+        {
+            sum = sum + i;
+        }
+    }
+    printf("sum of all even numbers is = %d",sum);
+    return 0;
+}
+
+------------Q3---------------
+
+#include<stdio.h>
+#include<stdbool.h>
+int main()
+{
+  int user_pin,valid_pin,count;
+  bool flag = false;
+  valid_pin = 2024;
+  printf("Enter your ATM pin: ");
+  scanf("%d",&user_pin);
+  count = 1;
+  if (user_pin != valid_pin)
+  {
+      printf("Try again\n");
+      while((flag == false) && (count <=2))
+      {
+          printf("Enter your ATM pin again: ");
+          scanf("%d",&user_pin);
+          if (user_pin != valid_pin)
+          {
+              flag = false;
+              count ++;
+          }
+          else
+          {
+              flag = true;
+          }
+      }
+      if (flag == false)
+      {
+          printf("Your card is blocked");
+      }
+      else
+      {
+          printf("You can now procceed after %d attempt",count+1);
+      }
+  }
+  else
+  {
+      printf("Successful attempt!");
+  }
+  return 0;
+}
+
+----------------Q4-------------------
+
+#include <stdio.h>
+#include<stdbool.h>
+
+int main() {
+    int streak = 0, streak_count,choice;    
+    char send_message;       
+    int last_day = 0;   
+    int current_day = 1;   
+
+    while (true) { 
+        printf("Did you send a message today? (Y for Yes, N for No): ");
+        scanf(" %c", &send_message); 
+        printf("Did you send any message before this today? 1 for yes or 0 for no: ");
+        scanf("%d",&choice);
+        if (choice == 1)
+        {
+            last_day = current_day;
+        }
+
+        if (send_message == 'Y' || send_message == 'y') 
+        {
+            if (current_day != last_day) {
+                streak++;
+                last_day = current_day; 
+                printf("Your current streak is: %d days.\n", streak);
+            } else {
+                printf("You've already sent a message today. Your streak remains at: %d days.\n", streak);
+            }
+        } 
+        else if (send_message == 'N' || send_message == 'n') 
+        {
+            printf("You missed a day. Your streak has been reset to: 0 days.\n");
+            streak_count =streak;
+            streak = 0; 
+            break; 
+        } 
+        else 
+        {
+            printf("Invalid input. Please enter Y or N.\n");
+        }
+        current_day++;
+    }
+
+    printf("You lost the streak of %d days.\n", streak_count);
+    return 0;
+}
+
+
+
+----------------Q5-------------------
+
+#include <stdio.h>
+#include<stdbool.h>
+int main() 
+{
+    int num,i;
+    bool flag = true;
+    printf("Enter a number to check if its prime or not: ");
+    scanf("%d",&num);
+    if (num < 1)
+    {
+      flag = false;  
+    }
+    else
+    {
+        for(i=2;i<=num/2;i++)
+      {
+        if(num % i == 0)
+        {
+            flag = false;
+            break;
+        }
+      }
+    }
+    
+    if (flag == true)
+    {
+        printf("%d is a prime number",num);
+    }
+    else
+    {
+        printf("%d is not a prime number",num);
+    }
+    return 0;
+}
+
+------------------Q6-----------------------
+
+#include <stdio.h>
+#include<stdbool.h>
+int main() 
+{
+    int num,i;
+    bool flag = true;
+    printf("Enter a number to check if its prime or not: ");
+    scanf("%d",&num);
+    if (num < 1)
+    {
+      flag = false;  
+    }
+    else
+    {
+        for(i=2;i<=num/2;i++)
+      {
+        if(num % i == 0)
+        {
+            flag = false;
+            break;
+        }
+      }
+    }
+    
+    if (flag == true)
+    {
+        printf("%d is a prime number\n",num);
+    }
+    else
+    {
+        printf("%d is not a prime number\n",num);
+    }
+    int first=0 , second=1 ,next,x;
+    
+        for (x=1;x <= num; x++)
+        {
+            if(x == 1)
+        {
+            printf("Series is = %d ",first);
+            continue;
+        }
+        if (x == 2)
+        {
+            printf("%d ",second);
+            continue;
+        }
+        next = first + second;
+        if (next < num)
+        {
+        printf("%d ",next);
+        first = second;
+        second = next;
+        }
+       
+            
+       }
+       return 0;
+}
+    
+-----------------Q7----------------------------
+
+#include <stdio.h>
+#include<math.h>
+int main() 
+{
+    int num,digit,times,sum,i,length,prev_num;
+    printf("Enter a number to check if its Armstrong or not: ");
+    scanf("%d",&num);
+    length = floor(log10(num))+1;
+    prev_num = num;
+    for(i=1;i<=length;i++)
+    {
+        digit = num % 10;
+        num = num / 10;
+        times = pow(digit,length);
+        sum = sum + times;
+    }
+    printf("sum = %d \n", sum);
+    if (prev_num == sum)
+    {
+        printf("%d is an Armstrong number",prev_num);
+    }
+    else
+    {
+        printf("%d is not an Armstrong number",prev_num);
+    }
+    return 0;
+}
