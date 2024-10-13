@@ -1,0 +1,223 @@
+**** LAB TASK 7 ****
+-------------------Q3------------------
+#include<stdio.h>
+#include<stdbool.h>
+
+int main() {
+    bool flag = true;
+    char name[50];
+    char phone[13];
+    char email[100];
+    int hasAtSymbol = 0, hasDotAfterAt = 0, i;
+    
+    // Name validation
+    printf("Enter your name: ");
+    scanf(" %[A-Za-z ]", name); 
+    for (i = 0; name[i] != '\0'; i++) {
+        if (!((name[i] >= 'A' && name[i] <= 'Z') || (name[i] >= 'a' && name[i] <= 'z') || name[i] == ' ')) {
+            flag = false;
+            break;  
+        }
+    }
+    
+    if (flag== true) {
+        printf("Your name is %s \n", name);
+    } else {
+        printf("Invalid input, enter alphabets or spaces only! \n");
+        return 1;
+    }
+    
+    // Email validation
+    flag = true;
+    printf("Enter your email ID: ");
+    scanf(" %[A-Za-z0-9._-@]", email); 
+    hasAtSymbol = hasDotAfterAt = 0;  
+    
+    for (i = 0; email[i] != '\0'; i++) {
+        if (!((email[i] >= 'A' && email[i] <= 'Z') || (email[i] >= 'a' && email[i] <= 'z') ||(email[i] >= '0' && email[i] <= '9') || email[i] == '.' || email[i] == '_' ||email[i] == '-' || email[i] == '@'))
+	 {
+            flag = false;  
+            break;
+        }
+
+        if (email[i] == '@') {
+            if (hasAtSymbol || i == 0) {  
+                flag = false;
+                break;
+            }
+            hasAtSymbol = 1;
+        }
+
+        if (hasAtSymbol && email[i] == '.') {
+            hasDotAfterAt = 1;
+        }
+    }
+
+    if (flag = true && hasAtSymbol && hasDotAfterAt) {
+        printf("Your email is %s \n", email);
+    } else {
+        printf("Invalid email input. Please enter a valid email address! \n");
+        return 1; 
+    }
+
+    // Phone number validation
+    flag = true;
+    printf("Enter your phone number: ");
+    scanf(" %[A-Za-z0-9._-@]", phone); 
+    
+    for (i = 0; phone[i] != '\0'; i++) {
+        if (!((phone[i] >= '0' && phone[i] <= '9') || phone[i] == ' ' || phone[i] == '-' ||(phone[i] == '+' && i == 0))) 
+	{
+            flag = false;  // Invalid character found
+            break;
+        }
+    }
+    
+    if (flag == true) {
+        printf("Your phone is %s \n", phone);
+    } else {
+        printf("Invalid phone input. Enter digits, spaces, hyphens, or a '+' at the start only! \n");
+        return 1; 
+    }
+
+    return 0;
+}
+
+------------------Q4-------------------
+#include<stdio.h>
+int main()
+{
+	int size , largest , smallest ,i,j;
+	int arr[] = {23,87,6,29,56,99,21,90,66};
+	smallest = arr[0];
+	largest = arr[0];
+	size = sizeof(arr)/sizeof(arr[0]);
+	for (i=0;i<size -1;i++)
+	{
+		if (arr[i] > arr[i + 1]) 
+		{ 
+			if ((arr[i] > largest) && (arr[i + 1] < smallest))
+			{
+				largest = arr[i];
+				smallest = arr[i + 1];
+			}
+			else if (arr[i] > largest)
+			{
+				largest = arr[i];
+			}
+			else if (arr[i+ 1] < smallest)
+			{
+				smallest = arr[i + 1];
+			}
+		}
+		else if (arr[i + 1] > arr[i])
+		{
+			if ((arr[i +1] > largest) && (arr[i] < smallest))
+			{
+				largest = arr[i+1];
+				smallest = arr[i];
+			}
+			else if (arr[i + 1] > largest)
+			{
+				largest = arr[i + 1];
+			}
+			else if (arr[i] < smallest)
+			{
+				smallest = arr[i];
+			}
+		}
+	
+	}
+	printf("Array = ");
+	for (j = 0; j < size;j++)
+	{
+		printf("%d ", arr[j]); 
+	}
+	printf("\nMinimum number = %d \n", smallest);
+	printf("Maximum number = %d ", largest);
+}
+
+-----------------------Q5---------------------------
+#include<stdio.h>
+int main()
+{
+	int week_temp[7];
+	int days[7];
+	int i,j,sum=0,temp;
+	float avg_temp;
+	for (i=0 ; i < 7;i++)
+	{
+		printf("Day %d temperature: ", i+1);
+		scanf("%d", &temp);
+		week_temp[i]= temp;
+		sum = sum + week_temp[i];
+	}
+	avg_temp = sum / 7;
+	printf("Average temperature is %.1f C , Extreme temperatures on ",avg_temp);
+
+	for (j=0;j<7;j++)
+	{
+	
+		if (week_temp[j] > 40)
+		{
+			days[j] = j + 1;
+			printf("day %d ",days[j]);
+		}
+		else if(week_temp[j] < 0)
+		{
+			days[j]=j + 1;
+			printf(" day %d ",days[j]);
+		}
+		
+}  
+}
+
+--------------------------Q6----------------------
+#include<stdio.h>
+
+int main() {
+    int N, i, max = 0;
+    printf("Enter the size of the array: ");
+    scanf("%d", &N);
+    int arr[N];
+    for (i = 0; i < N; i++) 
+    {
+        printf("Element %d = ", i + 1);
+        scanf("%d", &arr[i]);
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+
+    // Frequency array to track occurrences
+    int freq[max + 1]; 
+    
+    // Initialize the frequency array
+    for (i = 0; i <= max; i++) 
+    {
+        freq[i] = 0;  
+    }
+    
+    for (i = 0; i < N; i++) 
+    {
+        freq[arr[i]]++;  
+    }
+    int found = 0;  
+    for (i = 0; i <= max; i++)
+    {
+        if (freq[i] > 1) {  
+            printf("Number %d ", i);
+            found = 1;
+        }
+    }
+    if (found == 1) 
+    {
+        printf("are occurring more than once.\n");
+    } else 
+    {
+        printf("None are occurring more than once.\n");
+    }
+
+    return 0;
+}
