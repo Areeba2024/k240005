@@ -5,4 +5,4 @@ elements are sorted. Then the element at the second index of the array will be t
 
 Output:
 
-![Q1 output](Q1 output.PNG)
+![Q1 output](PF Theory Assignment/Assignment 2/Q1/Q1 output.PNG)
