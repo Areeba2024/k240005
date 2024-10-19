@@ -8,9 +8,9 @@ int main()
 	int len,temp,i;
 	printf("Enter the length of the array: ");
 	scanf("%d",&len);
-	int arr[len];
+	int arr[len]; //array to store the user input
 	printf("Input %d elements in the array(value must be <9999) \n",len);
-	for(i=0;i<len;i++)
+	for(i=0;i<len;i++) //loop to store the user input at each array index
 	{
 		printf("element-%d: ",i);
 		scanf("%d",&arr[i]);
@@ -18,7 +18,7 @@ int main()
 	bool flag = true;
 	while(flag==true)
 	{
-		flag = false;
+		flag = false; //sets the flag for the each round 
 		for(i=0;i<len-1;i++)
 		{
 			if(arr[i]>arr[i+1])
@@ -30,7 +30,7 @@ int main()
 			}
 		}
 	}
-	if(len >= 2)
+	if(len >= 2) 
 	{
 	    printf("The Second smallest element in the array is: %d",arr[1]);
 	}
