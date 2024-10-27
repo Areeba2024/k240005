@@ -55,7 +55,7 @@ int main() {
                 printf(",");
             }
             comma = 0;
-             printf("'%c':%d", slogans[i][j], freq[i][j]);
+             printf("'%c':%d", slogans[i][j], freq[i][j]); //prints the characters along with their frequency for each slogan
         }
         printf("}");
         printf("\n");
