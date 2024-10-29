@@ -11,15 +11,19 @@ int main() {
         scanf(" %[^\n]", slogans[i]); // This will read the entire string including spaces
     }
     
-    for (i = 0; i < 3; i++) {
-        for (j = 0; slogans[i][j] != '\0'; j++) {
+    for (i = 0; i < 3; i++) 
+    {
+        for (j = 0; slogans[i][j] != '\0'; j++) 
+        {
              if (slogans[i][j] == -1) // skips the repeated elements
             { 
                continue;
             }
             freq[i][j] = 1; //initialize the frequency array to 1
-            for (k = j + 1; slogans[i][k] != '\0'; k++) { //checks for the repeated character in the string and increments the frequency as per occurance
-                if (slogans[i][j] == slogans[i][k] && slogans[i][j] != ' ') {
+            for (k = j + 1; slogans[i][k] != '\0'; k++) 
+            { //checks for the repeated character in the string and increments the frequency as per occurance
+                if (slogans[i][j] == slogans[i][k] && slogans[i][j] != ' ') 
+                {
                     freq[i][j]++;
                     slogans[i][k] = -1;
                     
@@ -44,7 +48,8 @@ int main() {
         }
         int comma = 1;
         printf("{");
-        for (j = 0; slogans[i][j] != '\0'; j++) {
+        for (j = 0; slogans[i][j] != '\0'; j++) 
+        {
           
             if (slogans[i][j] == -1) //checks for the repeated one and skips it
             { 
@@ -55,7 +60,7 @@ int main() {
                 printf(",");
             }
             comma = 0;
-             printf("'%c':%d", slogans[i][j], freq[i][j]); //prints the characters along with their frequency for each slogan
+            printf("'%c':%d", slogans[i][j], freq[i][j]); //prints the characters along with their frequency for each slogan
         }
         printf("}");
         printf("\n");
