@@ -17,9 +17,9 @@ int main()
             { 
                continue;
             }
-            freq[i][j] = 0; //initialize the frequency array to 1
-            for (k = j + 1; words[i][k] != '\0'; k++) 
-            { //checks for the repeated character in the string and increments the frequency as per occurance
+            freq[i][j] = 0; 
+            for (k = j + 1; words[i][k] != '\0'; k++) //checks for the repeated character in the string and increments the frequency as per occurance
+            { 
                 if (words[i][j] == words[i][k] && words[i][j] != ' ') 
                 {
                     freq[i][j]++;
@@ -40,17 +40,15 @@ int main()
             }
             printf("%c",words[i][j]);
         }
-        printf("\n");
-    }
- for (i = 0; i < 3; i++) 
-    {
+       printf("\n");
         for (j = 0; words[i][j] != '\0'; j++) 
         {
         	if(freq[i][j] > 1)
             {
-            	printf("Letter %c has been repeated for %d times",words[i][j],freq[i][j]+1);
-			}
+            	printf("Letter %c has been repeated for %d times ",words[i][j],freq[i][j]);
+            	printf("\n");
+            }
        }
-       printf("\n");
+      
     }
 }
