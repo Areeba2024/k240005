@@ -5,14 +5,14 @@
 void input_trans(char words[][10], char copy_words[][10],int *count) {
     int i;
      printf("Enter the number of elements: ");
-    scanf("%d", count);  // Read the number of words
-    getchar();  // Clear newline left by scanf
+    scanf("%d", count);  
+    getchar();  
     for (i = 0; i < *count; i++) 
     {
         printf("Enter word %d: ", i + 1);
         fgets(words[i], 10, stdin);
         strcpy(copy_words[i],words[i]);
-        words[i][strcspn(words[i], "\n")] = '\0';  // Remove newline character
+        words[i][strcspn(words[i], "\n")] = '\0';  
         
     }
 }
@@ -37,35 +37,35 @@ void arrange_trans(char copy_words[][10], int count) {
         }
     }
 
-    // Print sorted words
-    for (i = 0; i < count; i++) {
-        printf("Sorted word %d: %s\n", i + 1, copy_words[i]);
-    }
+    
 }
-void sort_trans(char copy_words[][10], int count)
-{
-    for(i=0;i< count;i++)
-    {
-        for(j=i+1;j<count;j++)
-        {
-            if(strcamp(copy_words[i],copy_words[j])==0)
-            {
-                sorted_array[]
-                
+void group_anagrams(char words[][10], char copy_words[][10], int count) {
+    int grouped[10] = {0};  
+    
+    printf("Anagram groups:\n");
+    for (int i = 0; i < count; i++) {
+        if (grouped[i]) continue;  
+        printf("['%s'", words[i]);
+        grouped[i] = 1;
+
+        for (int j = i + 1; j < count; j++) {
+            if (!grouped[j] && strcmp(copy_words[i], copy_words[j]) == 0) {
+                printf(",'%s'", words[j]);
+                grouped[j] = 1;  
             }
         }
+        printf("]");  
     }
 }
+
+
 int main() {
     int count;
     char words[10][10]; 
-    char copy_words[10][10];// Fixed array size for up to 10 words of max length 9 (+1 for null terminator)
-
-    // Take input
+    char copy_words[10][10];
     input_trans(words, copy_words,&count);
-
-    // Sort characters within each word
     arrange_trans(copy_words, count);
+    group_anagrams(words,copy_words,count);
 
     return 0;
 }
