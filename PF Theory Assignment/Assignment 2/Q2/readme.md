@@ -1,4 +1,5 @@
 Thinking:
+
 I took three slogans as input and counts how many times each character appears in each slogan, ignoring spaces. I used an array to track the counts and made sure not to count repeated characters more than once. In the end, I print the frequency of each character for each slogan in a clear format.
 
 Output:
