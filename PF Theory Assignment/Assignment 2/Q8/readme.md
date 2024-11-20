@@ -1,5 +1,12 @@
 Thinking:
 
+The program converts between binary, decimal, and hexadecimal number systems. The user can choose what type of conversion they want, and I created different functions for each conversion.
+
+If the user chooses binary to decimal, the program reads the binary number, checks if it’s valid, and converts it.
+
+If the user wants to convert decimal to binary or decimal to hexadecimal, the program takes a decimal number and converts it to the other systems.
+
+For hexadecimal to decimal or binary to hexadecimal, it first converts to decimal (if needed) and then does the second conversion.
 
 Output:
 
