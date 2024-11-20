@@ -1,5 +1,6 @@
 Thinking:
 
+The game uses a 5x5 grid where the player moves ('P') to collect items ('I') while avoiding obstacles ('X'). The player can move up, down, left, or right, using the if else statements and update the positions and also checks if the player collects all items or encounters obstacles. The game ends when all items are collected or the player quits.
 
 Output:
 
