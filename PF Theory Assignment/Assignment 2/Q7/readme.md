@@ -1,5 +1,7 @@
 Thinking:
 
+A random 6x5 grid filled with letters is generated using rand func, and then user is asked to search for strings in the grid. The input string is checked both row-wise and column-wise, and the score is updated based on whether the string is found or not. The program loops until the user types "END", resetting the grid each time.
+
 
 Output:
 
