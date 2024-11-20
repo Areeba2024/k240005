@@ -1,5 +1,6 @@
 Thinking:
 
+The program creates a complex star pattern by dividing it into three parts: the top, middle, and bottom sections. The logic involves calculating the appropriate number of spaces and stars for each row, adjusting them dynamically to form a symmetrical pattern based on the user input. It uses nested loops to control the placement of stars and spaces for each part of the pattern, ensuring the output is properly aligned.
 
 Output:
 
