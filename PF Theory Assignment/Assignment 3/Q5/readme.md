@@ -1,4 +1,5 @@
-
+Thinking:
+The case s
 Output:
 
 ![image](https://github.com/user-attachments/assets/d0ae458d-0f04-45e9-b8da-6e08b6cc8b94)
